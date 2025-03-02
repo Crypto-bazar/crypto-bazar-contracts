@@ -8,12 +8,20 @@ import "./Token.sol";
 
 contract NFTMarket {
     address owner;
-    Token public nftContractAddress;
+
+    address[] public tokenList;
 
     constructor() {
         owner = msg.sender;
-        nftContractAddress = new Token("Test", "TST", "http://localhost:8080/test");
     }
 
+    function createNFT(string memory _name, string memory _symbol, string memory _uri) public {
+        Token nft = new Token(_name, _symbol, _uri);
+        tokenList.push(address(nft));
+    }
 
+    function getNFT(uint256 _id) external view returns (string memory name, string memory symbol, string memory uri){
+        Token nft = Token(tokenList[_id]);
+        return(nft.name(), nft.symbol(), nft.getTokenUri());
+    }
 }

@@ -32,4 +32,8 @@ contract Token is ERC721, Ownable {
     function _baseURI() internal view override returns (string memory) {
         return _baseTokenURI;
     }
+
+    function getTokenUri() public view returns(string memory) {
+        return _baseTokenURI;
+    } 
 }

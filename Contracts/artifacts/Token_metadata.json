@@ -302,6 +302,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "getTokenUri",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "address",
@@ -861,11 +874,11 @@
 			]
 		},
 		"Contracts/Token.sol": {
-			"keccak256": "0xe0378574a3997981655d50da5b981f1630aa962d4356aabb46ad9f447d78157b",
+			"keccak256": "0xbc006c96f4cb2378e2e6240241371e5a599ba34f5bcdc66ae8ce20a2fd434210",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://5c1129a01156b7ed25fb51673d497d0ead4e054e798ca4627de51e45ee4e9575",
-				"dweb:/ipfs/QmPnCSYPqLaNEPcDNHvgexwv5U3X98ZjR3uZ1YyUKvYvvx"
+				"bzz-raw://bee37baaee7e890dad0b7ae06a43d0efbe736f842c8d15c924521d682f792cf1",
+				"dweb:/ipfs/QmNR5Q5E9c4t2eakKue8Y4658mu8yg8uux5Qd65gDnCxMM"
 			]
 		}
 	},
