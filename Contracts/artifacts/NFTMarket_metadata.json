@@ -9,6 +9,77 @@
 				"inputs": [],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_symbol",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_uri",
+						"type": "string"
+					}
+				],
+				"name": "createNFT",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_id",
+						"type": "uint256"
+					}
+				],
+				"name": "getNFT",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "symbol",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "uri",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "tokenList",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -198,20 +269,20 @@
 				"dweb:/ipfs/QmVUSvooZKEdEdap619tcJjTLcAuH6QBdZqAzWwnAXZAWJ"
 			]
 		},
-		"Contracts/AbstractNFT.sol": {
-			"keccak256": "0x38006cf7ab43e638b75e095d9098ddd303a0f387bb8606aa550f11a77d490cab",
+		"Contracts/Market.sol": {
+			"keccak256": "0x3a983f53d1329acf67766945310717d196f161da48f8e20e4c786247a5ee83d3",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://f67609cd4267638cd391704a911b6fadbfade8947bbf10d0f5dd456f4440bdb9",
-				"dweb:/ipfs/QmcJfQ6vbBc5QUdhAFtw2CSvMbBDhWGZxAwhgCDieNRSvY"
+				"bzz-raw://16ec0eccfed3db5451ae897c2982d19d917f42cc849ba6c2615ea15517a3afbf",
+				"dweb:/ipfs/QmRjBT5dECigMhHcpshdNMuL7xcuQT4XPQt2FYwVmRjc2B"
 			]
 		},
-		"Contracts/Market.sol": {
-			"keccak256": "0x64622137e4b314f7ba05480b922754eaa5a4067c5a01eb6464e968a3506369b3",
+		"Contracts/Token.sol": {
+			"keccak256": "0xf3065f4b60f9d83036eb672f34ac37d97ee52320c4d6be7821f8d833dc6528c8",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://3fd1dda2c87c0a3ffe0dfb6b9d7ebfc8951e41cf4fb4d6b57970c47e9125aa40",
-				"dweb:/ipfs/QmaVxMQa4nrZgt3BXph6RzDogifWK6VUcLD5CNk6wC6uMq"
+				"bzz-raw://b05e54c201166e3e3e31221d80ca71a4a89f71cca246c3a4f205b178a5184909",
+				"dweb:/ipfs/QmSRqkimwdRFSE1HXMiHiAEcs6UtJeVfjDQiFp9Q4EKD1i"
 			]
 		}
 	},

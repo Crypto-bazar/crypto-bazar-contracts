@@ -7,15 +7,18 @@ import "@openzeppelin/contracts/utils/Counters.sol";
 
 contract Token is ERC721, Ownable {
     using Counters for Counters.Counter;
-    
-    Counters.Counter private _tokenIdCounter;  // Счетчик токенов
-    string private _baseTokenURI;  // Базовый URI для метаданных
 
-    constructor(string memory name, string memory symbol, string memory baseURI) ERC721(name, symbol) Ownable(msg.sender) {
+    Counters.Counter private _tokenIdCounter;
+    string private _baseTokenURI;
+
+    constructor(
+        string memory name,
+        string memory symbol,
+        string memory baseURI
+    ) ERC721(name, symbol) Ownable(msg.sender) {
         _baseTokenURI = baseURI;
     }
 
-    // Функция для минтинга нового NFT
     function mintNFT(address to) public onlyOwner returns (uint256) {
         _tokenIdCounter.increment();
         uint256 newTokenId = _tokenIdCounter.current();
@@ -23,17 +26,15 @@ contract Token is ERC721, Ownable {
         return newTokenId;
     }
 
-    // Установка базового URI (если нужно менять)
     function setBaseURI(string memory baseURI) public onlyOwner {
         _baseTokenURI = baseURI;
     }
 
-    // Переопределение функции baseURI
     function _baseURI() internal view override returns (string memory) {
         return _baseTokenURI;
     }
 
-    function getTokenUri() public view returns(string memory) {
+    function getTokenUri() public view returns (string memory) {
         return _baseTokenURI;
-    } 
+    }
 }
