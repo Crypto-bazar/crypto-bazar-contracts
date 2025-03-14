@@ -355,18 +355,12 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "to",
+						"name": "_receiver",
 						"type": "address"
 					}
 				],
 				"name": "mintNFT",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
+				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
 			},
@@ -840,14 +834,6 @@
 				"dweb:/ipfs/Qmax9WHBnVsZP46ZxEMNRQpLQnrdE4dK8LehML1Py8FowF"
 			]
 		},
-		"@openzeppelin/contracts/utils/Counters.sol": {
-			"keccak256": "0xf0018c2440fbe238dd3a8732fa8e17a0f9dce84d31451dc8a32f6d62b349c9f1",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://59e1c62884d55b70f3ae5432b44bb3166ad71ae3acd19c57ab6ddc3c87c325ee",
-				"dweb:/ipfs/QmezuXg5GK5oeA4F91EZhozBFekhq5TD966bHPH18cCqhu"
-			]
-		},
 		"@openzeppelin/contracts/utils/Panic.sol": {
 			"keccak256": "0xf7fe324703a64fc51702311dc51562d5cb1497734f074e4f483bfb6717572d7a",
 			"license": "MIT",
@@ -905,11 +891,19 @@
 			]
 		},
 		"Contracts/Token.sol": {
-			"keccak256": "0xa24fe3647d898ef96318e9c5f139c2fea319c4ad45a2bacc02c7f386e7d22c0e",
+			"keccak256": "0xdc2565cc1fbbb22d516722dbfd313b05155493866713e7da1c034a4b1008c28a",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://7394f0bab2c20f524d345cc68a020b66ede8dc0ab13d3b58c562c5bb51b9ea34",
-				"dweb:/ipfs/QmejWywF2Ur7nd3k3qeA2ZVnQwSq2hQ8JAY4XCpJD18qKo"
+				"bzz-raw://9e90ba042298b2d802f3c94cd297a4591c0ac78287b3dd8fbd483ef7756ba9d0",
+				"dweb:/ipfs/QmejLYQD8BTxF9EpbreS89j715BagvEQrWNSBzPccon1mC"
+			]
+		},
+		"hardhat/console.sol": {
+			"keccak256": "0xf2560b5386574153057104d19a9e68a32ee912cf23c0c8df1fe9a0607f42d543",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://a63166e036b040826baa513772451a79925daa304b38749100efb089ac07cdc2",
+				"dweb:/ipfs/QmUtMTxUFKU6a5oFXsEJnTPvb3QPb7GDDmSv5yZ1jFHDwR"
 			]
 		}
 	},

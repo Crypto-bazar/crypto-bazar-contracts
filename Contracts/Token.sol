@@ -3,24 +3,23 @@ pragma solidity ^0.8.28;
 
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/utils/Counters.sol";
+import "hardhat/console.sol";
 
 contract Token is ERC721, Ownable {
-    using Counters for Counters.Counter;
-    
-    Counters.Counter private _tokenIdCounter;  // Счетчик токенов
-    string private _baseTokenURI;  // Базовый URI для метаданных
+    string private _baseTokenURI;
 
-    constructor(string memory name, string memory symbol, string memory baseURI) ERC721(name, symbol) Ownable(msg.sender) {
+    constructor(
+        string memory name,
+        string memory symbol,
+        string memory baseURI
+    ) ERC721(name, symbol) Ownable(msg.sender) {
         _baseTokenURI = baseURI;
     }
 
     // Функция для минтинга нового NFT
-    function mintNFT(address to) public onlyOwner returns (uint256) {
-        _tokenIdCounter.increment();
-        uint256 newTokenId = _tokenIdCounter.current();
-        _safeMint(to, newTokenId);
-        return newTokenId;
+    function mintNFT(address _receiver) public onlyOwner {
+        console.log(_receiver);
+        _mint(_receiver, 1);
     }
 
     function transferToken(address _from, address _to) public {
@@ -32,7 +31,7 @@ contract Token is ERC721, Ownable {
         _baseTokenURI = baseURI;
     }
 
-    function getBalance() public view returns(uint256) {
+    function getBalance() public view returns (uint256) {
         return balanceOf(msg.sender);
     }
 
@@ -41,7 +40,7 @@ contract Token is ERC721, Ownable {
         return _baseTokenURI;
     }
 
-    function getTokenUri() public view returns(string memory) {
+    function getTokenUri() public view returns (string memory) {
         return _baseTokenURI;
-    } 
+    }
 }
