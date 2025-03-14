@@ -40,7 +40,7 @@ contract NFTMarket {
     ) public returns (address) {
         Token nft = new Token(_name, _symbol, _uri);
         tokenList.push(address(nft));
-        nft.mintNFT(msg.sender);
+        nft.mintNFT(0x5B38Da6a701c568545dCfcB03FcB875f56beddC4);
         return address(nft);
     }
 
@@ -49,6 +49,9 @@ contract NFTMarket {
         Token nft = Token(_nftAddress);
         require(nft.balanceOf(msg.sender) > 0, "You do not own this NFT");
         require(_price > 0, "Price must be greater than 0");
+
+        // Approve the market contract to transfer the NFT
+        // nft.approve(address(this), 1);
 
         NFT memory nftData = NFT({
             addressToken: _nftAddress,
@@ -75,8 +78,10 @@ contract NFTMarket {
         require(!sale.isSold, "NFT is already sold");
         require(msg.value >= sale.price, "Insufficient funds");
 
-        // Token nft = Token(sale.nft.addressToken);
-        // nft.transferToken(sale.seller, msg.sender); 
+        Token nft = Token(sale.nft.addressToken);
+        
+        // Transfer the NFT to the buyer
+        nft.transferFrom(sale.seller, msg.sender, 1);
 
         sale.isSold = true;
         payable(sale.seller).transfer(msg.value);
@@ -102,7 +107,7 @@ contract NFTMarket {
         require(_tokenAddress != address(0), "Invalid token address");
         require(_to != address(0), "Invalid recipient address");
         Token token = Token(_tokenAddress);
-        token.transferToken(msg.sender, _to);
+        token.transferFrom(msg.sender, _to, 1);
     }
 
     function getSalesTokenList() external view returns (SalesNFT[] memory) {
